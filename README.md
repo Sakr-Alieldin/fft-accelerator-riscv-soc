@@ -8,7 +8,7 @@ simulation, sign-off) in a 45 nm CMOS technology. This is the **Energy-Efficient
 > **Headline result: 9.5x energy reduction over the baseline (24.6 nJ to 2.59 nJ
 > per FFT chunk) at 12 MHz, with 0 setup and 0 hold violations after place and route.**
 
-This repository contains the **final project report and selected sign-off
+This repository contains the **final project report (ET4351_VLSI_Project_report.pdf) and selected sign-off
 artifacts**. The RTL source code, synthesis and PnR scripts are not included, as
 they build on course-provided infrastructure that is not publicly redistributable.
 
