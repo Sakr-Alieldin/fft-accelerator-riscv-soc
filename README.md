@@ -190,7 +190,9 @@ Final result: 0 setup violations (WNS +35.1 ns) and 0 hold violations
 
 This was a 10-person group project, with 5 members on the EE design and 5 on the
 HP design. The EE design described in this repository is the result of the
-combined work of the EE sub-team.The official project contributions table is presented in the report
+combined work of the EE sub-team.The official project contributions table is presented in the report, my individual
+work covered the RFFT + pure Radix-4 RTL implementation and the hold-violation
+closure across the SDC and PnR flow.
 
 
 ## Acknowledgments
