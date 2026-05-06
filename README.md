@@ -11,7 +11,7 @@ simulation, sign-off) in a 45 nm CMOS technology. This is the **Energy-Efficient
 This repository contains the **final project report (ET4351_VLSI_Project_report.pdf) and selected sign-off
 artifacts**. The RTL source code, synthesis and PnR scripts are not included, as
 they build on course-provided infrastructure that is not publicly redistributable.
-
+[Read the Project Report](ET4351_VLSI_Project_report.pdf)
 ---
 
 ## Table of Contents
