@@ -18,10 +18,9 @@ they build on course-provided infrastructure that is not publicly redistributabl
 1. [Overview](#overview)
 2. [Results](#results)
 3. [Design Methodology](#design-methodology)
-4. [Implementation Flow](#implementation-flow)
-5. [Tools and Technology](#tools-and-technology)
-6. [Team and Individual Contributions](#team-and-individual-contributions)
-7. [Acknowledgments](#acknowledgments)
+4. [Tools and Technology](#tools-and-technology)
+5. [Team ](#team)
+6. [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -160,43 +159,7 @@ hold-fixing problem during PnR. The closure recipe:
 Final result: 0 setup violations (WNS +35.1 ns) and 0 hold violations
 (WNS +0.041 ns).
 
----
 
-## Implementation Flow
-
-```
-  RTL (Verilog/SystemVerilog)
-        |
-        |  Genus  ------------+
-        v                     |
-  Behavioral simulation       |
-  (QuestaSim, RTL only)       |
-        |                     |
-        |  verify.py          |  (Python golden-FFT comparison)
-        v                     v
-  Gate-level synthesis        |
-  (Genus, slow corner)        |
-        |                     |
-        v                     |
-  Structural simulation       |
-  (gate netlist + typ SDF) ---+--->  struct.vcd
-        |                          (drives power-aware placement)
-        v
-  Place and route (Innovus)
-  Floorplan -> PowerPlan -> Place -> CTS -> Route -> Verify -> Report -> Export
-        |
-        v
-  Post-layout simulation
-  (phys netlist + min/max SDF) -->  phys.hold.vcd
-        |                          (drives final VCD-annotated power report)
-        v
-  Sign-off
-  - timing (setup + hold), DRC, DRV
-  - VCD-annotated power
-  - functional verify against Python golden FFT
-```
-
----
 
 ## Tools and Technology
 
@@ -224,25 +187,12 @@ Final result: 0 setup violations (WNS +35.1 ns) and 0 hold violations
 
 ---
 
-## Team and Individual Contributions
+## Team 
 
 This was a 10-person group project, with 5 members on the EE design and 5 on the
 HP design. The EE design described in this repository is the result of the
-combined work of the EE sub-team. Per the official project contributions table:
+combined work of the EE sub-team. Per the official project contributions table presented in the report
 
-| Member | Role on the EE design |
-|---|---|
-| Daniel Tyukov | Final EE design, low-activity twiddle-handling optimizations, register implementation and manual clock gating |
-| Romeu Longo Malinski | Final EE design, low-activity twiddle-handling optimizations |
-| Franz-Josef Zuaiter | Final EE design, Radix-4-4-2 FFT design (intermediate step) |
-| Jiahui Que | Final EE design, RFFT Radix-4 FFT, post-layout simulation, design validation |
-| **Alieldin Sakr (this contributor)** | **Final EE design, RFFT Radix-4 implementation, hold-violation closure** |
-
-The HP variant was developed in parallel by Shangong Lin, Anastasis Kazakos,
-Yaonan Hu, Alessandro Cagnacci, and Leonardo Castello. See the full project
-report for HP details.
-
----
 
 ## Acknowledgments
 
